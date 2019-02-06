@@ -1,0 +1,10 @@
+<h1><%= @recipe.name %></h1>
+<h2>by: <%= @recipe.user.name %></h2>
+
+<% @recipe.ingredients.each do |ingredient| %>
+  <p><%= ingredient.name %></p>
+<% end %>
+
+<%= button_to "New Recipe", new_recipe_path, method: "get" %>
+<%= button_to "Edit Recipe", edit_recipe_path, method: "get" %>
+<%= button_to "All Recipes", recipes_path, method: "get" %>

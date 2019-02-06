@@ -1,0 +1,13 @@
+<h1> <%= @ingredient.name %> </h1>
+
+<h3>Recipes that use <%= @ingredient.name %></h3>
+<ul>
+  <% @ingredient.recipes.each do |recipe| %>
+  <li><%= recipe.name %></li>
+  <% end %>
+</ul>
+
+
+<p>Number of People Allergic: <%= @ingredient.number_of_allergens %></p>
+
+<%= button_to "Back to All Ingredients", ingredients_path, method: "get" %>

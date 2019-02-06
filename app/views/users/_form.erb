@@ -1,0 +1,8 @@
+<%= form_for @user do |f| %>
+  <p> <%= f.label :name %> <%= f.text_field :name %> </p>
+  <p><%= f.label :age %> <%= f.number_field :age %></p>
+    <%= f.label "Please select what ingredients you're allergic to:" %><br>
+    <%= f.collection_check_boxes :allergen_ids, Ingredient.all, :id, :name %><br>
+  <br>
+  <%= f.submit %>
+<% end %>

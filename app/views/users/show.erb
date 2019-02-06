@@ -1,0 +1,17 @@
+<h1><%= @user.name %></h1>
+
+<h3>Recipes:</h3>
+<ul>
+  <% @user.recipes.each do |recipe| %>
+  <li><%= recipe.name %></li>
+  <% end %>
+</ul>
+
+<h3>Allergens:</h3>
+<ul>
+  <% @user.allergens.each do |allergen| %>
+  <li><%= allergen.name %></li>
+  <% end %>
+</ul>
+
+<%= button_to "Delete User", user_path, method: "delete" %>

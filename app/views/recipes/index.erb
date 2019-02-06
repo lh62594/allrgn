@@ -1,0 +1,19 @@
+<h1>All the Recipes</h1>
+
+
+
+<%= form_tag(recipes_path, method: "get") do %>
+<label>Sort by:</label>
+<select name="sort_by">
+  <option value="0">Greatest to Least</option>
+  <option value="1">Least to Greatest</option>
+</select>
+  <%= submit_tag("Submit") %>
+<% end %>
+
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to "#{recipe.name}   |   #{recipe.number_of_ingredients}", recipe_path(recipe) %></li>
+  <% end %>
+</ul>
