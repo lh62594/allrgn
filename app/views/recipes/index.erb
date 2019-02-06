@@ -17,3 +17,6 @@
     <li><%= link_to "#{recipe.name}   |   #{recipe.number_of_ingredients}", recipe_path(recipe) %></li>
   <% end %>
 </ul>
+
+
+<%= button_to "Create a New Recipe", new_recipe_path, method: "get" %>
